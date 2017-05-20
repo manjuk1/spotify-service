@@ -42,8 +42,9 @@ class PlaylistReadService < BaseService
   end
 
   def concert_date_valid?
+    binding.pry
     Date.parse(concert_date)
-  rescue Exceprion => error
+  rescue Exception => error
     false
   end
 
