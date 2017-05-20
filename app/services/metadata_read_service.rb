@@ -43,13 +43,13 @@ class MetadataReadService
 
   def fetch_metadata track, release_year
     {
-      spotify_id: track["id"],
+      spotify_id: track["id"].to_s,
       artist_name: artist_name,
-      track_name: track["name"],
-      duration_ms: track["duration_ms"],
+      name: track["name"],
+      duration_ms: track["duration_ms"].to_i,
       album_name: track["album"]["name"],
       isrc: track["external_ids"]["isrc"],
-      release_year: release_year
+      release_year: release_year.to_s 
     }
   end
 
